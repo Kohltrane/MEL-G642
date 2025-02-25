@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //TODO:
-    //Approximating alpha using Qm.n converter
-    //Approximating arc_tan using Qm.n converter
+    //Approximating alpha ----> DONE
+    //Approximating arc_tan
 module cordic(
     input clk, reset, //synchronous
     input signed [15:0] argument, //argument
@@ -19,10 +19,22 @@ module cordic(
     function signed [15:0] cordic_arctan;
         input [5:0] i;
         case(i)
-            6'd0: cordic_arctan=0;
-            6'd1: cordic_arctan=16'b00;
-            6'd2:;
-            
+            6'd0: cordic_arctan=16'b0011001001000100;
+            6'd1: cordic_arctan=16'b0011101101011000;
+            6'd2: cordic_arctan=16'b0011111010111000;
+            6'd3: cordic_arctan=16'b0011111110101000;
+            6'd4: cordic_arctan=16'b0011111111110000;
+            6'd5: cordic_arctan=16'b0010000000000000;
+            6'd6: cordic_arctan=16'b0010000000000000;
+            6'd7: cordic_arctan=16'b0010000000000000;
+            6'd8: cordic_arctan=16'b0010000000000000;
+            6'd9: cordic_arctan=16'b0010000000000000;
+            6'd10: cordic_arctan=16'b0010000000000000;
+            6'd11: cordic_arctan=16'b0010000000000000;
+            6'd12: cordic_arctan=16'b0010000000000000;
+            6'd13: cordic_arctan=16'b0010000000000000;
+            6'd14: cordic_arctan=16'b0010000000000000;
+            6'd15: cordic_arctan=16'b0000000000000000;
             default: cordic_arctan=0;
         endcase
     endfunction
